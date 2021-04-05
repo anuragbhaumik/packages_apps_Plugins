@@ -190,6 +190,7 @@ public class VolumeDialogImpl extends PanelSideAware implements VolumeDialog {
 
     private Drawable mSwitchStreamSelectedDrawable;
     private boolean mActiveStreamManuallyModified = false;
+    private boolean mPanelOnLeftSide;
 
     public VolumeDialogImpl() {}
 
@@ -207,6 +208,7 @@ public class VolumeDialogImpl extends PanelSideAware implements VolumeDialog {
         mHasSeenODICaptionsTooltip =
                 Prefs.getBoolean(sysuiContext, Prefs.Key.HAS_SEEN_ODI_CAPTIONS_TOOLTIP, false);
         initObserver(pluginContext, sysuiContext);
+        mPanelOnLeftSide = mContext.getResources().getBoolean(R.bool.config_audioPanelOnLeftSide);
     }
 
     public void init(int windowType, Callback callback) {

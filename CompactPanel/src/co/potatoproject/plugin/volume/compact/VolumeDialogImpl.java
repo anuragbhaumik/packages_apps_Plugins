@@ -185,7 +185,7 @@ public class VolumeDialogImpl extends PanelSideAware implements VolumeDialog {
     private boolean mHasSeenODICaptionsTooltip;
     private ViewStub mODICaptionsTooltipViewStub;
     private View mODICaptionsTooltipView = null;
-
+    private boolean mPanelOnLeftSide;
     private PanelMode mPanelMode = PanelMode.MINI;
 
     public VolumeDialogImpl() {}
@@ -204,6 +204,7 @@ public class VolumeDialogImpl extends PanelSideAware implements VolumeDialog {
         mHasSeenODICaptionsTooltip =
                 Prefs.getBoolean(sysuiContext, Prefs.Key.HAS_SEEN_ODI_CAPTIONS_TOOLTIP, false);
         initObserver(pluginContext, sysuiContext);
+        mPanelOnLeftSide = mContext.getResources().getBoolean(R.bool.config_audioPanelOnLeftSide);
     }
 
     @Override
